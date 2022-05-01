@@ -19,13 +19,6 @@ public class Department {
     @Column(name = "image")
     private String image;
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "department_has_user",
-            joinColumns = {@JoinColumn(name = "department_id")},
-            inverseJoinColumns = {@JoinColumn(name = "user_id")})
-    private List<User> users = new ArrayList<>();
-
     public Department() {
     }
 
@@ -64,7 +57,6 @@ public class Department {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", image='" + image + '\'' +
-                ", users=" + users +
                 '}';
     }
 }

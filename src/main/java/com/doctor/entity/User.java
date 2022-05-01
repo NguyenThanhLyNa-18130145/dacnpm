@@ -40,17 +40,6 @@ public class User {
     @Column(name = "address")
     private String address;
 
-    @OneToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
-
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(name = "department_has_user",
-            joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "department_id")})
-    private List<Department> departments = new ArrayList<>();
-
     public User() {
     }
 
@@ -137,14 +126,6 @@ public class User {
         this.address = address;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -157,8 +138,6 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", address='" + address + '\'' +
-                ", role=" + role +
-                ", departments=" + departments +
                 '}';
     }
 }

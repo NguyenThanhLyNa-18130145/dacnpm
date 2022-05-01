@@ -14,10 +14,6 @@ public class Symptom {
     @Column(name = "content")
     private String content;
 
-    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "department_id")
-    private Department department;
-
     public Symptom() {
     }
 
@@ -41,20 +37,11 @@ public class Symptom {
         this.content = content;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
     @Override
     public String toString() {
         return "Symptom{" +
                 "id=" + id +
                 ", content='" + content + '\'' +
-                ", department=" + department +
                 '}';
     }
 }

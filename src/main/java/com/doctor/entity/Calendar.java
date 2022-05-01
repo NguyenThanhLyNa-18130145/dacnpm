@@ -18,10 +18,6 @@ public class Calendar {
     @Column(name = "time")
     private int time;
 
-    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "doctor_id")
-    private User user;
-
     public Calendar() {
     }
 
@@ -54,21 +50,12 @@ public class Calendar {
         this.time = time;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     @Override
     public String toString() {
         return "Calendar{" +
                 "id=" + id +
                 ", date=" + date +
                 ", time=" + time +
-                ", user=" + user +
                 '}';
     }
 }
