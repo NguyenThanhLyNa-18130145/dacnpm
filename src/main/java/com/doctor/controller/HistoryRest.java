@@ -26,7 +26,7 @@ public class HistoryRest {
     public History getHistory(@PathVariable int historyId) {
         History theHistory= this.historyService.findById(historyId);
         if (theHistory == null) {
-            throw new RuntimeException("Employee id not found - " + historyId);
+            throw new RuntimeException("History id not found - " + historyId);
         }
         return theHistory;
     }
@@ -48,9 +48,9 @@ public class HistoryRest {
     public String deleteHistory(@PathVariable int historyId) {
         History theHistory = this.historyService.findById(historyId);
         if (theHistory == null) {
-            throw new RuntimeException("Employee id not found - " + historyId);
+            throw new RuntimeException("History id not found - " + historyId);
         }
         this.historyService.deleteById(historyId);
-        return "Deleted employee id - " + historyId;
+        return "Deleted History id - " + historyId;
     }
 }

@@ -26,7 +26,7 @@ public class RoleRest {
     public Role getRole(@PathVariable int roleId) {
         Role theRole= this.roleService.findById(roleId);
         if (theRole == null) {
-            throw new RuntimeException("Employee id not found - " + roleId);
+            throw new RuntimeException("Role id not found - " + roleId);
         }
         return theRole;
     }
@@ -48,9 +48,9 @@ public class RoleRest {
     public String deleteRole(@PathVariable int roleId) {
         Role theRole = this.roleService.findById(roleId);
         if (theRole == null) {
-            throw new RuntimeException("Employee id not found - " + roleId);
+            throw new RuntimeException("Role id not found - " + roleId);
         }
         this.roleService.deleteById(roleId);
-        return "Deleted employee id - " + roleId;
+        return "Deleted Role id - " + roleId;
     }
 }

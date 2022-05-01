@@ -26,7 +26,7 @@ public class CalendarRest {
     public Calendar getCalendar(@PathVariable int calendarId) {
         Calendar theCalendar= this.calendarService.findById(calendarId);
         if (theCalendar == null) {
-            throw new RuntimeException("Employee id not found - " + calendarId);
+            throw new RuntimeException("Calendar id not found - " + calendarId);
         }
         return theCalendar;
     }
@@ -48,9 +48,9 @@ public class CalendarRest {
     public String deleteCalendar(@PathVariable int calendarId) {
         Calendar theCalendar = this.calendarService.findById(calendarId);
         if (theCalendar == null) {
-            throw new RuntimeException("Employee id not found - " + calendarId);
+            throw new RuntimeException("Calendar id not found - " + calendarId);
         }
         this.calendarService.deleteById(calendarId);
-        return "Deleted employee id - " + calendarId;
+        return "Deleted Calendar id - " + calendarId;
     }
 }

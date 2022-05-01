@@ -174,5 +174,19 @@ INSERT INTO `manage_doctor_booking`.`department_has_user` (`department_id`, `use
 INSERT INTO `manage_doctor_booking`.`department_has_user` (`department_id`, `user_id`) VALUES ('10', '15');
 INSERT INTO `manage_doctor_booking`.`department_has_user` (`department_id`, `user_id`) VALUES ('11', '16');
 INSERT INTO `manage_doctor_booking`.`department_has_user` (`department_id`, `user_id`) VALUES ('12', '17');
-
-
+-- =====================================================================================================================================================
+-- -----------------------------------------------------
+-- data data `manage_doctor_booking`.`department_has_user`
+-- -----------------------------------------------------
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('24', 'benh dau', '1', 1);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('23', 'benh dau', '2', 1);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('23', 'benh dau', '1', 0);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('22', 'benh dau', '3', 1);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('23', 'benh dau', '1', 0);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('12', 'benh dau', '5', 0);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('2', 'benh dau', '29', 0);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('3', 'benh dau', '1', 0);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('1', 'benh dau', '10', 1);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('1', 'benh dau', '11', 0);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('3', 'benh dau', '11', 1);
+INSERT INTO `manage_doctor_booking`.`history` (`patient_id`, `symptom_content`, `calendar_id`, `status`) VALUES ('6', 'benh dau', '12', 0);

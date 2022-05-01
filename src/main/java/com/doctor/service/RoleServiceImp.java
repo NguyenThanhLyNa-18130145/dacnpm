@@ -1,8 +1,9 @@
 package com.doctor.service;
 
 import com.doctor.dao.RoleRepository;
-import com.doctor.entity.Department;
 import com.doctor.entity.Role;
+import org.hibernate.internal.build.AllowPrintStacktrace;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,11 @@ import java.util.Optional;
 @Service
 public class RoleServiceImp implements RoleService{
     private RoleRepository roleRepository;
+
+    @Autowired
+    public RoleServiceImp(RoleRepository roleRepository) {
+        this.roleRepository = roleRepository;
+    }
 
     @Override
     public List<Role> findAll() {

@@ -26,7 +26,7 @@ public class UserRest {
     public User getUser(@PathVariable int userId) {
         User theUser= this.userService.findById(userId);
         if (theUser == null) {
-            throw new RuntimeException("Employee id not found - " + userId);
+            throw new RuntimeException("User id not found - " + userId);
         }
         return theUser;
     }
@@ -48,9 +48,9 @@ public class UserRest {
     public String deleteUser(@PathVariable int userId) {
         User theUser = this.userService.findById(userId);
         if (theUser == null) {
-            throw new RuntimeException("Employee id not found - " + userId);
+            throw new RuntimeException("User id not found - " + userId);
         }
         this.userService.deleteById(userId);
-        return "Deleted employee id - " + userId;
+        return "Deleted User id - " + userId;
     }
 }

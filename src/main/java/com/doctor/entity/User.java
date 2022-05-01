@@ -1,5 +1,8 @@
 package com.doctor.entity;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,7 +40,7 @@ public class User {
     @Column(name = "address")
     private String address;
 
-    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @OneToOne
     @JoinColumn(name = "role_id")
     private Role role;
 
