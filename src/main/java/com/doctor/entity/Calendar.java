@@ -18,6 +18,10 @@ public class Calendar {
     @Column(name = "time")
     private int time;
 
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+    @JoinColumn(name = "user_id")
+    private User doctor;
+
     public Calendar() {
     }
 
@@ -50,12 +54,21 @@ public class Calendar {
         this.time = time;
     }
 
+    public User getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(User doctor) {
+        this.doctor = doctor;
+    }
+
     @Override
     public String toString() {
         return "Calendar{" +
                 "id=" + id +
                 ", date=" + date +
                 ", time=" + time +
+                ", user=" + doctor +
                 '}';
     }
 }

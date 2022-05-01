@@ -44,7 +44,7 @@ public class HistoryRest {
         return theHistory;
     }
 
-    @DeleteMapping("/histories/{calendarId}")
+    @DeleteMapping("/histories/{historyId}")
     public String deleteHistory(@PathVariable int historyId) {
         History theHistory = this.historyService.findById(historyId);
         if (theHistory == null) {

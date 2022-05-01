@@ -44,7 +44,7 @@ public class UserRest {
         return theUser;
     }
 
-    @DeleteMapping("/users/{calendarId}")
+    @DeleteMapping("/users/{userId}")
     public String deleteUser(@PathVariable int userId) {
         User theUser = this.userService.findById(userId);
         if (theUser == null) {

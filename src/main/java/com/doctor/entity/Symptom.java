@@ -1,6 +1,8 @@
 package com.doctor.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "symptom")
@@ -13,6 +15,13 @@ public class Symptom {
 
     @Column(name = "content")
     private String content;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+    @JoinTable(name = "department_has_symptom",
+            joinColumns = @JoinColumn(name = "symptom_id"),
+            inverseJoinColumns = @JoinColumn(name = "department_id"))
+    private List<Department> departments = new ArrayList<>();
 
     public Symptom() {
     }

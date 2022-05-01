@@ -16,6 +16,14 @@ public class History {
     @Column(name = "status")
     private boolean status;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "calendar_id")
+    private Calendar calendar;
+
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+    @JoinColumn(name = "user_id")
+    private User patient;
+
     public History() {
     }
 
@@ -48,12 +56,29 @@ public class History {
         this.status = status;
     }
 
+    public Calendar getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(Calendar calendar) {
+        this.calendar = calendar;
+    }
+
+    public User getPatient() {
+        return patient;
+    }
+
+    public void setPatient(User patient) {
+        this.patient = patient;
+    }
+
     @Override
     public String toString() {
         return "History{" +
                 "id=" + id +
                 ", symptomContent='" + symptomContent + '\'' +
                 ", status=" + status +
+                ", patient=" + patient +
                 '}';
     }
 }

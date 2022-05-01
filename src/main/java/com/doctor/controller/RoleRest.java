@@ -44,7 +44,7 @@ public class RoleRest {
         return theRole;
     }
 
-    @DeleteMapping("/roles/{calendarId}")
+    @DeleteMapping("/roles/{roleId}")
     public String deleteRole(@PathVariable int roleId) {
         Role theRole = this.roleService.findById(roleId);
         if (theRole == null) {

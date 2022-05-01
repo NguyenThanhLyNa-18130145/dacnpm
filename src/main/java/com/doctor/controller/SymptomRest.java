@@ -44,7 +44,7 @@ public class SymptomRest {
         return theSymptom;
     }
 
-    @DeleteMapping("/symptoms/{calendarId}")
+    @DeleteMapping("/symptoms/{symptomId}")
     public String deleteSymptom(@PathVariable int symptomId) {
         Symptom theSymptom = this.symptomService.findById(symptomId);
         if (theSymptom == null) {
