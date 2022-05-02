@@ -22,6 +22,9 @@ public class Calendar {
     @JoinColumn(name = "user_id")
     private User doctor;
 
+    @OneToOne(mappedBy = "calendar")
+    private History history;
+
     public Calendar() {
     }
 

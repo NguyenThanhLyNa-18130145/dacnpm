@@ -44,10 +44,10 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
-    @OneToMany(mappedBy = "doctor", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
     private List<Calendar> calendars = new ArrayList<>();
 
-    @OneToMany(mappedBy = "patient", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<History> histories = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.LAZY,

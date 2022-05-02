@@ -16,7 +16,7 @@ public class History {
     @Column(name = "status")
     private boolean status;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
     @JoinColumn(name = "calendar_id")
     private Calendar calendar;
 
