@@ -18,12 +18,9 @@ public class Calendar {
     @Column(name = "time")
     private int time;
 
-    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "user_id")
     private User doctor;
-
-    @OneToOne(mappedBy = "calendar")
-    private History history;
 
     public Calendar() {
     }

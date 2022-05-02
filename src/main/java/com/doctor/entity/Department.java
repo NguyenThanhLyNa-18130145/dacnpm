@@ -24,10 +24,10 @@ public class Department {
     @JoinTable(name = "department_has_user",
             joinColumns = @JoinColumn(name = "department_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private List<User> users = new ArrayList<>();
+    private List<User> doctors = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(name = "department_has_symptom",
             joinColumns = @JoinColumn(name = "department_id"),
             inverseJoinColumns = @JoinColumn(name = "symptom_id"))
@@ -65,12 +65,12 @@ public class Department {
         this.image = image;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<User> getDoctors() {
+        return doctors;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setDoctors(List<User> users) {
+        this.doctors = users;
     }
 
     public List<Symptom> getSymptoms() {

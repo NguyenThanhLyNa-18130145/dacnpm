@@ -17,7 +17,7 @@ public class Symptom {
     private String content;
 
     @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST})
+            cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(name = "department_has_symptom",
             joinColumns = @JoinColumn(name = "symptom_id"),
             inverseJoinColumns = @JoinColumn(name = "department_id"))

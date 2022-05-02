@@ -22,7 +22,7 @@ public class HistoryRest {
         return this.historyService.findAll();
     }
 
-    @GetMapping("/histories/{calendarId}")
+    @GetMapping("/histories/{historyId}")
     public History getHistory(@PathVariable int historyId) {
         History theHistory= this.historyService.findById(historyId);
         if (theHistory == null) {
